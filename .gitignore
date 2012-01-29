@@ -1,0 +1,10 @@
+.coverage
+*.egg-info
+*.egg
+*.pyc
+build/
+dist/
+docs/_build
+docs/_themes
+env26/
+Zzz*
