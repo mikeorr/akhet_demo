@@ -31,14 +31,15 @@ def add_renderer_globals(event):
     if not request:
         return
     renderer_globals["r"] = request
+    renderer_globals["url"] = request.url_generator
     
     # Optional additions:
-    #renderer_globals["c"] = request.tmpl_context
+    #renderer_globals["settings"] = request.registry.settings
     #try:
     #    renderer_globals["session"] = request.session
     #except ConfigurationError:
     #    pass
+    #renderer_globals["c"] = request.tmpl_context
 
-    renderer_globals["url"] = request.url_generator
 
 
