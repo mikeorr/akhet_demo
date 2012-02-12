@@ -35,20 +35,20 @@ ${self.body()}
 </html>
 
 
-#### title() method ##########################################################
+#### ht_title() method ##########################################################
 ## Return the default title for the <title></title> tag.  
 ## It can't contain HTML tags.
-## Pages can override this to specify a different title.
+## The default is whatever the title() method returns.
 ##############################################################################
-<%def name="title()">${project}</%def>
+<%def name="title()">${self.title()}</%def>
 
 
-#### body_title() method #####################################################
+#### title() method #####################################################
 ## Return the default title for the page body.
 ## It can contain HTML tags.
-## The default is to return the same as title().
+## The default is blank.
 ##############################################################################
-<%def name="body_title()">${self.title()}</%def>
+<%def name="body_title()"></%def>
 
 
 #### head_extra() method #####################################################
