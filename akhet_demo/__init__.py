@@ -6,15 +6,11 @@ def main(global_config, **settings):
     """
     config = Configurator(settings=settings)
 
-    # Configure Beaker sessions and caching
-    session_factory = pyramid_beaker.session_factory_from_settings(settings)
-    config.set_session_factory(session_factory)
-    pyramid_beaker.set_cache_regions_from_settings(settings)
-
-    # Configure renderers and event subscribers.
-    config.add_renderer(".html", "pyramid.mako_templating.renderer_factory")
+    # Configure Beaker sessions and caching, renderers, and event subscribers.
+    config.include("pyramid_beaker")
     config.include(".subscribers")
     config.include("akhet.static")
+    config.add_renderer(".html", "pyramid.mako_templating.renderer_factory")
 
     # Add routes and views.
     config.add_route("home", "/")
